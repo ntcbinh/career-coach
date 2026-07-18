@@ -1,6 +1,7 @@
 "use client";
 
 import { ChakraProvider } from "./ChakraProvider";
+import { QueryProvider } from "./QueryProvider";
 
 type Props = {
   children: React.ReactNode;
@@ -9,7 +10,9 @@ type Props = {
 export function AppProvider({ children }: Props) {
   return (
     <ChakraProvider>
-      {children}
+      <QueryProvider>
+        {children}
+      </QueryProvider>
     </ChakraProvider>
   );
 }

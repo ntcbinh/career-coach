@@ -13,9 +13,43 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "Career Coach";
+const description =
+  "Practice English speaking and ace your software engineer interviews with your AI career coach.";
+
 export const metadata: Metadata = {
-  title: "Career Coach",
-  description: "AI-powered English Speaking Coach",
+  title: {
+    default: title,
+    template: `%s | ${title}`
+  },
+  description,
+  applicationName: title,
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
+  keywords: [
+    "AI career coach",
+    "English speaking practice",
+    "Software engineer interview",
+    "Interview preparation",
+    "Communication skills"
+  ],
+  authors: [
+    {
+      name: "Nguyen Thi Cam Binh",
+      url: "https://github.com/ntcbinh",
+    }
+  ],
+  creator: "Nguyen Thi Cam Binh",
+  openGraph: {
+    title,
+    description,
+    type: "website",
+    siteName: title
+  },
+  twitter: {
+    card: "summary",
+    title,
+    description
+  }
 };
 
 export default function RootLayout({
